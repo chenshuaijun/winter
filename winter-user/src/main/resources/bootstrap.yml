@@ -1,0 +1,15 @@
+server:
+    port: 8070
+spring:
+    application:
+        name: winter-service-user
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://localhost:3300/eureka/
+    instance:
+        hostname: localhost
+        metadataMap:
+            instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}

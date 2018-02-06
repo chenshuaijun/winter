@@ -1,0 +1,33 @@
+server:
+    port: 8761
+spring:
+    application:
+        name: winter-consumer-front
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://localhost:3300/eureka/
+    server:
+        enable-self-preservation: false
+    instance:
+        hostname: localhost
+        lease-expiration-duration-in-seconds: 30
+        lease-renewal-interval-in-seconds: 30
+        metadataMap:
+            instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#feign:
+#    httpclient:
+#        enabled: true
+
+## 日志管理控制
+debug: false
+logging:
+#    path: D://var/log
+    file: D://var/log/${spring.application.name}.log
+    level:
+      root: INFO
+      cn.letcode: DEBUG
+      org.springframework.web: WARN
+      org.hibernate: ERROR
