@@ -33,20 +33,17 @@
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+        <finalName>winter-server</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -62,15 +59,13 @@
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
                         <manifestEntries>
-                            <Class-Path>./</Class-Path>
-                        </manifestEntries>
-                        <manifestEntries>
                             <Class-Path>conf/</Class-Path>
                         </manifestEntries>
                     </archive>
-                    <excludes>
-                        <exclude>config/**</exclude>
-                    </excludes>
+                    <includes>
+                        <!-- 打jar包时，只打包class文件 -->
+                        <include>**/*.class</include>
+                    </includes>
                 </configuration>
             </plugin>
             <plugin>
