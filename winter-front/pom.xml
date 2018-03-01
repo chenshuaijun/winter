@@ -24,10 +24,6 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
         <!--表示为web工程-->
@@ -35,39 +31,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--暴露各种指标-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
 
         <!--常用工具类-->
         <dependency>
             <groupId>cn.letcode</groupId>
-            <artifactId>winter-utils</artifactId>
+            <artifactId>winter-api</artifactId>
             <version>1.0</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>cn.letcode</groupId>-->
-            <!--<artifactId>winter-api</artifactId>-->
-            <!--<version>1.0</version>-->
-            <!--<scope>compile</scope>-->
-        <!--</dependency>-->
     </dependencies>
 
 
     <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+        <finalName>winter-front</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -86,15 +66,13 @@
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
                         <manifestEntries>
-                            <Class-Path>./</Class-Path>
-                        </manifestEntries>
-                        <manifestEntries>
                             <Class-Path>conf/</Class-Path>
                         </manifestEntries>
                     </archive>
-                    <!--<excludes>-->
-                        <!--<exclude>config/**</exclude>-->
-                    <!--</excludes>-->
+                    <includes>
+                        <!-- 打jar包时，只打包class文件 -->
+                        <include>**/*.class</include>
+                    </includes>
                 </configuration>
             </plugin>
             <plugin>

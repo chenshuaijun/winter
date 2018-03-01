@@ -14,7 +14,10 @@
         <module>winter-front</module>
         <module>winter-api</module>
         <module>winter-webmagic</module>
-        <module>winter-service</module>
+
+        <module>winter-demo</module>
+        <module>winter-demo1</module>
+        <module>winter-bean</module>
     </modules>
 
     <properties>
@@ -155,16 +158,18 @@
         </repository>
     </repositories>
     <build>
+
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
+            <!--系统编译插件，使用默认配置,默认遍布 3.1 -->
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-compiler-plugin</artifactId>-->
+            <!--<version>3.7.0</version>-->
+            <!--<configuration>-->
+            <!--<source>1.8</source>-->
+            <!--<target>1.8</target>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 
