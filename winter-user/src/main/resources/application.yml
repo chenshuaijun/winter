@@ -63,7 +63,6 @@ eureka:
     serviceUrl:
       defaultZone: http://10.128.164.245:3300/eureka/
   instance:
-    hostname: localhost
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
@@ -72,7 +71,7 @@ eureka:
 debug: false
 logging:
 #  path: D://var/log
-  file: D://var/log/${spring.application.name}.log
+  file: /tmp/winter/${spring.application.name}.log
   level:
     root: INFO
     cn.letcode: DEBUG

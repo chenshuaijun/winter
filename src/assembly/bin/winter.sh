@@ -11,10 +11,11 @@
 env_args="-Xms128m -Xmx128m"
 sleeptime=0
 arglen=$#
+name=winter*.jar
 
 # get winter pid
 get_pid(){
-    pname="`find .. -name 'winter*.jar'`"
+    pname=$name
     pname=${pname:3}
     pid=`ps -ef | grep $pname | grep -v grep | awk '{print $2}'`
     echo "$pid"
@@ -26,7 +27,7 @@ startup(){
     then
         echo "winter already startup!"
     else
-        jar_path=`find .. -name 'winter*.jar'`
+        jar_path=$name
         echo "jarfile=$jar_path"
         cmd="java $1 -jar $jar_path > ./winter.out < /dev/null &"
         echo "cmd: $cmd"

@@ -34,7 +34,7 @@ public class UserLoginApplication {
      *
      * @return 用户登录成功后返回的信息
      */
-    @RequestMapping(value = "/userLogin", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+    @RequestMapping(value = "/userLogin", produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public UserInfo userLogin() {
         UserInfo userInfo = userLoginService.userLogin();
