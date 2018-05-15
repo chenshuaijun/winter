@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.letcode</groupId>
     <artifactId>winter</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
     <modules>
         <module>winter-server</module>
@@ -15,15 +15,12 @@
         <module>winter-api</module>
         <module>winter-webmagic</module>
 
-        <module>winter-demo</module>
-        <module>winter-demo1</module>
         <module>winter-bean</module>
     </modules>
 
     <properties>
-        <sprint-boot.version>1.5.7.RELEASE</sprint-boot.version>
-        <sprint-boot.version>1.5.7.RELEASE</sprint-boot.version>
-        <spring-cloud.version>1.3.4.RELEASE</spring-cloud.version>
+        <sprint-boot.version>1.5.12.RELEASE</sprint-boot.version>
+        <spring-cloud.version>1.3.6.RELEASE</spring-cloud.version>
         <spring-cloud-redis.version>1.4.7.RELEASE</spring-cloud-redis.version>
         <spring-cloud-context.version>1.3.0.M1</spring-cloud-context.version>
         <commons-lang3.version>3.6</commons-lang3.version>
@@ -172,5 +169,14 @@
             <!--</plugin>-->
         </plugins>
     </build>
+
+    <distributionManagement>
+
+        <repository>
+            <id>maven.letcode</id>
+            <name>MyCo Internal Repository</name>
+            <url>http://maven.letcode.cn/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
