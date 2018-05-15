@@ -31,7 +31,7 @@ spring:
         host: smtp.letcode.cn
         # port: 465
         username: service@letcode.cn
-        password: NNNddd123
+        password: 你的密码
         properties:
             mail:
                 smtp:
