@@ -80,6 +80,7 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>1.3.1</version>
             </dependency>
+
             <!--微服务基础-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -88,18 +89,21 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <!--阿里巴巴数据驱动-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>1.1.2</version>
             </dependency>
+
             <!--mysql处理驱动-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.21</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
@@ -107,12 +111,12 @@
             </dependency>
 
             <!--实体bean实力化小工具-->
-            <!--<dependency>-->
-            <!--<groupId>org.projectlombok</groupId>-->
-            <!--<artifactId>lombok</artifactId>-->
-            <!--<version>${lombok.version}</version>-->
-            <!--<scope>provided</scope>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
             <!--爬虫小工具-->
             <dependency>
@@ -142,6 +146,8 @@
                 <artifactId>jsoup</artifactId>
                 <version>${jsoup.version}</version>
             </dependency>
+
+
         </dependencies>
     </dependencyManagement>
     <repositories>
