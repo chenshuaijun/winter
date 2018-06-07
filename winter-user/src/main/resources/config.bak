@@ -1,0 +1,49 @@
+
+#    # 使用druid数据源
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    filters: stat
+#    maxActive: 200
+#    initialSize: 1
+#    maxWait: 60000
+#    minIdle: 1
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: select 'x'
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxOpenPreparedStatements: 20
+
+#mybatis:
+#  mapperLocations: classpath:mapper/*.xml
+#  typeAliasesPackage: tk.mapper.model
+#
+#mapper:
+#  mappers: cn.letcode.winter.mapper
+#  notEmpty: false
+#  identity: MYSQL
+
+
+
+#  # 缓存数据库配置方式
+#  redis:
+#    database: 0
+#    host: 10.128.164.245
+#    port: 6500
+#    password: redis123
+#    pool:
+#      max-active: 100
+#      max-idle: 100
+#      max-wait: 1500
+#      min-idle: 0
+#      timeout: 60000
+#    cluster:
+#      nodes:
+#        - 192.168.0.17:6390
+#        - 192.168.0.17:6391
+#        - 192.168.0.17:6392
+#        - 192.168.0.9:6390
+#        - 192.168.0.9:6391
+#        - 192.168.0.9:6392
+#
