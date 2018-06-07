@@ -1,6 +1,7 @@
 package cn.letcode.winter.user.controller;
 
 import cn.letcode.bean.module.UserInfo;
+import cn.letcode.winter.api.user.service.UserControllerInterface;
 import cn.letcode.winter.user.service.UserLoginServiceImp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
  * @author chenshuaijun
  */
 @RestController
-public class UserLoginApplication {
+public class UserLoginApplication implements UserControllerInterface {
     private static Logger logger = LoggerFactory.getLogger(UserLoginApplication.class);
     // 配置文件中的msg
     @Value("${msg:unknown}")
@@ -29,16 +30,22 @@ public class UserLoginApplication {
     @Resource
     UserLoginServiceImp userLoginService;
 
-    /**
-     * 用户登录请求入口（接口）
-     *
-     * @return 用户登录成功后返回的信息
-     */
-    @RequestMapping(value = "/userLogin", produces = {"application/json;charset=UTF-8"})
-    @ResponseBody
-    public UserInfo userLogin() {
-        UserInfo userInfo = userLoginService.userLogin();
-        userInfo.setUserName(this.msg);
+//    /**
+//     * 用户登录请求入口（接口）
+//     *
+//     * @return 用户登录成功后返回的信息
+//     */
+//    @RequestMapping(value = "/userLogin", produces = {"application/json;charset=UTF-8"})
+//    @ResponseBody
+//    public UserInfo userLogin() {
+//        UserInfo userInfo = userLoginService.userLogin();
+//        userInfo.setUserId("1234");
+//        return userInfo;
+//    }
+
+    @Override
+    public UserInfo userLogin(UserInfo userInfo) {
+        userInfo = userLoginService.userLogin();
         userInfo.setUserId("1234");
         return userInfo;
     }
@@ -57,3 +64,5 @@ public class UserLoginApplication {
         return userInfo;
     }
 }
+
+

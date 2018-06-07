@@ -5,5 +5,5 @@ ADD ./target/winter-server.tar.gz /app
 #RUN bash -c 'cd /app/winter-server'
 RUN bash -c 'touch /app/winter-server/winter-server.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/winter-server/winter-server.jar"]
-#  todo 动态配置
+#  todo 动态配置  可以尝试配置 -1
 EXPOSE 3300

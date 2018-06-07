@@ -5,17 +5,11 @@ server:
   port: 7211
 
 eureka:
-  instance:
-    hostname: localhost
-    leaseRenewalIntervalInSeconds: 10
-    metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
-  #password: password
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://10.128.164.245:3300/eureka/
+      defaultZone: http://localhost:3300/eureka/
 #      defaultZone: http://user:${eureka.password}@localhost:8761/eureka/
 endpoints:
   restart:

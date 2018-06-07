@@ -1,76 +1,32 @@
-msg: Hello
 server:
   port: 8070
 spring:
   application:
     name: winter-service-user
-  # 缓存数据库配置方式
-  redis:
-    database: 0
-    host: 10.128.164.245
-    port: 6500
-    password: redis123
-    pool:
-      max-active: 100
-      max-idle: 100
-      max-wait: 1500
-      min-idle: 0
-      timeout: 60000
-#    cluster:
-#      nodes:
-#        - 192.168.0.17:6390
-#        - 192.168.0.17:6391
-#        - 192.168.0.17:6392
-#        - 192.168.0.9:6390
-#        - 192.168.0.9:6391
-#        - 192.168.0.9:6392
-#
-#  datasource:
-#    name: test
-#    url: jdbc:mysql://192.168.147.128:3306/test?useUnicode=true&characterEncoding=utf8
-#    username: test
-#    password: test
-#    # 使用druid数据源
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driver-class-name: com.mysql.jdbc.Driver
-#    filters: stat
-#    maxActive: 200
-#    initialSize: 1
-#    maxWait: 60000
-#    minIdle: 1
-#    timeBetweenEvictionRunsMillis: 60000
-#    minEvictableIdleTimeMillis: 300000
-#    validationQuery: select 'x'
-#    testWhileIdle: true
-#    testOnBorrow: false
-#    testOnReturn: false
-#    poolPreparedStatements: true
-#    maxOpenPreparedStatements: 20
-#mybatis:
-#  mapperLocations: classpath:mapper/*.xml
-#  typeAliasesPackage: tk.mapper.model
-#
-#mapper:
-#  mappers: cn.letcode.winter.mapper
-#  notEmpty: false
-#  identity: MYSQL
 
+  datasource:
+    name: test
+    url: jdbc:mysql://localhost:3306/adminlte_admin?useUnicode=true&characterEncoding=utf8
+    username: adminlte
+    password: adminlte
+    driver-class-name: com.mysql.jdbc.Driver
 
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
 eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://10.128.164.245:3300/eureka/
-  instance:
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
+      defaultZone: http://localhost:3300/eureka/
+      #defaultZone: http://user:${eureka.password}@localhost:8761/eureka/
 
 ## 日志管理控制
 debug: false
 logging:
-#  path: D://var/log
   file: /tmp/winter/${spring.application.name}.log
   level:
     root: INFO

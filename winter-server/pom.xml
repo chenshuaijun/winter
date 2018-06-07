@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>winter-server</artifactId>
+    <version>1.0.1</version>
     <dependencyManagement>
         <dependencies>
             <dependency>
