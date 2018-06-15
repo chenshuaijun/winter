@@ -44,7 +44,7 @@ public class UserLoginApplication implements UserControllerInterface {
 //    }
 
     @Override
-    public UserInfo userLogin(UserInfo userInfo) {
+    public UserInfo checkUserPassword(UserInfo userInfo) {
         userInfo = userLoginService.userLogin();
         userInfo.setUserId("1234");
         return userInfo;

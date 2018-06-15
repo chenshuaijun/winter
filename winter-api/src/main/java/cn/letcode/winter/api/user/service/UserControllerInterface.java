@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "winter-service-user")
 public interface UserControllerInterface {
+
+
     /**
      * 用户登陆
      * 后续优化
@@ -17,5 +19,5 @@ public interface UserControllerInterface {
      * @return produces = {"application/json;charset=UTF-8"})
      */
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
-    public UserInfo userLogin(UserInfo userInfo);
+    public UserInfo checkUserPassword(UserInfo userInfo);
 }
