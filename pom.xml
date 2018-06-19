@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>winter-server</module>
-        <module>winter-utils</module>
+        <module>winter-commons</module>
         <module>winter-user</module>
         <module>winter-front</module>
         <module>winter-api</module>
@@ -30,6 +30,7 @@
         <letcdoe-api.version>1.0.3</letcdoe-api.version>
         <freemarker.version>2.3.27-incubating</freemarker.version>
         <jsoup.version>1.11.2</jsoup.version>
+        <mysql.version>8.0.11</mysql.version>
 
 
         <maven.compiler.encoding>utf-8</maven.compiler.encoding>
@@ -101,7 +102,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.21</version>
+                <version>${mysql.version}</version>
             </dependency>
 
             <dependency>
