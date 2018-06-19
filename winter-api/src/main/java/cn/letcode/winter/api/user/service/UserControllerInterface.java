@@ -19,6 +19,8 @@ public interface UserControllerInterface {
      */
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
     public UserInfo checkUserPassword(UserInfo userInfo);
+
+
     public UserInfo userLogin(UserInfo userInfo);
 
     /**
