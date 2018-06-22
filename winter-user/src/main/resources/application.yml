@@ -6,10 +6,11 @@ spring:
 
   datasource:
     name: test
-    url: jdbc:mysql://localhost:3306/adminlte_admin?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/adminlte_admin?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: adminlte
     password: adminlte
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: com.mysql.jdbc.Driver
 
   jpa:
     properties:

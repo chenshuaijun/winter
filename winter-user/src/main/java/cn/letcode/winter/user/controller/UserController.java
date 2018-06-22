@@ -3,10 +3,13 @@ package cn.letcode.winter.user.controller;
 import cn.letcode.bean.module.UserInfo;
 import cn.letcode.winter.api.user.service.UserControllerInterface;
 import cn.letcode.winter.user.service.UserService;
-import cn.letcode.winter.user.service.impl.UserLoginServiceImp;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -16,26 +19,31 @@ import javax.annotation.Resource;
  *
  * @author chenshuaijun
  */
-
+@Api
 @RestController
-public class UserController implements UserControllerInterface {
-
+public class UserController {
     private static Logger logger = LoggerFactory.getLogger(UserController.class);
-
     @Resource
     UserService userService;
 
-    @Override
-    public UserInfo userLogin(UserInfo userInfo) {
-        userInfo = userService.userLogin();
-        userInfo.setUserId("1234");
-        return userInfo;
+
+    /**
+     * 用户登录入口
+     *
+     * @param loginName
+     * @param password
+     */
+    @ApiOperation(value = "用户登录", notes = "用户登录API")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "loginName", value = "用户登录名", required = true, paramType = "loginName", dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "用户登录密码", required = true, paramType = "password", dataType = "String"),
+    })
+
+    @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST}, produces = {"application/json;charset=utf-8"})
+    public void login(@RequestParam(value = "loginName") String loginName, @RequestParam(value = "password") String password) {
+
     }
 
-    @Override
-    public void logoutClearSession(String sessionId) {
-        userService.cleanUserSession(sessionId);
-    }
 }
 
 

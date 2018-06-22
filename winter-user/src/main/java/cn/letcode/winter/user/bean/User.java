@@ -1,5 +1,7 @@
 package cn.letcode.winter.user.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,17 +11,19 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
-
+    @ApiModelProperty(value = "用户姓名")
     @Column(nullable = true)
     private String name;
 
+    @ApiModelProperty(value = "用户年龄")
     @Column(nullable = true)
     private Integer age;
 
     private String remark;
 
 
-    public User(){}
+    public User() {
+    }
 
     public User(String name, Integer age) {
         this.name = name;
