@@ -2,13 +2,12 @@ package cn.letcode.winter.api.user.service;
 
 
 import cn.letcode.bean.module.UserInfo;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient(name = "winter-service-user")
+@RequestMapping(value = "/user")
 public interface UserControllerInterface {
     /**
      * 用户登陆
@@ -17,10 +16,12 @@ public interface UserControllerInterface {
      *
      * @return produces = {"application/json;charset=UTF-8"})
      */
-    @RequestMapping(value = "/userLogin", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+    @RequestMapping(value = "/checkUserPassword", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
     public UserInfo checkUserPassword(UserInfo userInfo);
 
 
+
+    @RequestMapping(value = "/userLogin", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
     public UserInfo userLogin(UserInfo userInfo);
 
     /**
