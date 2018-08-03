@@ -7,4 +7,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
      User findUserById(Long id);
 
+     int countByAge(int age);
+
+
+
 }
